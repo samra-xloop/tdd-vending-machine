@@ -41,6 +41,17 @@ describe('the vending machine', () => {
         expect(actual).toEqual('you have deposited Rs 150');
         });
 
+        it('show message for unavailable Items', () => {
+            // setup
+            const machine = new Machine();
+    
+            // exercise
+            const actual = machine.selectItem(4);
+            
+            // assert
+            expect(actual).toEqual('The item you selected is unavailable');
+            });
+
    
 
 
