@@ -85,3 +85,9 @@ Methods:
 ### Pairing Rubric
 ![Pairing Rubric](pairing_rubric.png)
 
+
+
+
+Authors:
+Samra Almas
+Noor Ahmed Raza Pirwani
