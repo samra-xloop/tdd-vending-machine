@@ -22,6 +22,8 @@ describe('the vending machine', () => {
             actual = machine.deposit(i);
             expected= `you have deposited Rs ${i}`
             expect(actual).toEqual(expected);
+            //we are assuming that we have used the deposited money before adding more money
+            machine.remaining_amount=0
         }
 
     
@@ -36,7 +38,7 @@ describe('the vending machine', () => {
         const actual = machine.deposit(50);
         
         // assert
-        expect(actual).toEqual('you have deposited 150');
+        expect(actual).toEqual('you have deposited Rs 150');
         });
 
    
