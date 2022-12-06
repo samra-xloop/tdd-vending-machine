@@ -27,6 +27,18 @@ describe('the vending machine', () => {
     
     });
 
+    it('show remaining + additional money', () => {
+        // setup
+        const machine = new Machine();
+        machine.deposit(100)
+
+        // exercise
+        const actual = machine.deposit(50);
+        
+        // assert
+        expect(actual).toEqual('you have deposited 150');
+        });
+
    
 
 

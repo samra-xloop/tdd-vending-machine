@@ -2,6 +2,7 @@ class Machine {
     
     constructor() {
         this.listOfItems=[{'crisps': 100}, {'chocolate': 350}, {'mints': 70}];
+        
     }
 
 
@@ -9,6 +10,7 @@ class Machine {
         return this.listOfItems;
     }
     deposit(amount){
+        
         switch(amount){
             case 10: return 'you have deposited Rs 10'; 
             break;
