@@ -46,7 +46,7 @@ describe('the vending machine', () => {
             const machine = new Machine();
     
             // exercise
-            const actual = machine.selectItem(4);
+            const actual = machine.selectItem(2);
             
             // assert
             expect(actual).toEqual('The item you selected is unavailable');

@@ -1,9 +1,9 @@
 class Machine {
     
     constructor() {
-        this.listOfItems=[{'crisps': 100}, {'chocolate': 350}, {'mints': 70}];
+        this.listOfItems=[{'crisps': 100}, {'chocolate': 350}, {},{'mints': 70}];
         this.remaining_amount=0
-        this.available_codes=[1,2,3]
+        this.available_codes=this.listOfItems.length
     }
 
 
@@ -19,17 +19,20 @@ class Machine {
         
     }
     selectItem(code){
-        let a = 0;
-        for(let i of this.available_codes){
-            if (i==code){
-                a = 1;
+        let a = 1; //item available
+            if (this.listOfItems[code]=='{}'){
+                a = 0;  //not available
             }
+                   
         
-            
+        
+        if (!a){
+            return 'The item you selected is unavailable';
         }
+
         
-        return a == 0 ? 'The item you selected is unavailable': '';
-                 }
+        
+    }
     
 };
 
