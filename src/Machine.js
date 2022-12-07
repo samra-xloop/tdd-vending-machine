@@ -18,25 +18,25 @@ class Machine {
         return `you have deposited Rs ${this.remaining_amount}`
         
     }
-    selectItem(code){
-        let a = 1; //item available
-            if (this.listOfItems[code]=='{}'){
-                a = 0;  //not available
-            }
-                   
-        
-        
-        if (!a){
-            return 'The item you selected is unavailable';
+    selectItem(code){ // assuming index of the list as the code for that item if o
+        if(Object.keys(this.listOfItems[code]).length === 0){
+            return 'The item you selected is unavailable'
         }
-
+        const item_price=this.listOfItems[code][Object.keys(this.listOfItems[code])[0]]
+        if(this.remaining_amount < item_price){
+            const needed_amount= item_price - this.remaining_amount
+            return `Your deposit is insufficient.  Please add Rs ${needed_amount} for this item`
+        }
+        }
         
         
-    }
+        
+    
     
 };
 
 module.exports=Machine
 
 // ob=new Machine
-// console.log(ob.deposit(10))
+// ob.deposit(50)
+// console.log(ob.selectItem(0))
