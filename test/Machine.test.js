@@ -4,7 +4,7 @@ describe('the vending machine', () => {
     it('should have items to purchase', () => {
         // setup
         const machine = new Machine();
-        const expected = [{'crisps': 100}, {'chocolate': 350}, {'mints': 70}];
+        const expected = [{'crisps': 100}, {'chocolate': 350},{}, {'mints': 70}];
 
         // exercise
         const actual = machine.seeSelections();
@@ -50,6 +50,20 @@ describe('the vending machine', () => {
             
             // assert
             expect(actual).toEqual('The item you selected is unavailable');
+            });
+        
+        
+
+        it('insufficient amount for the item', () => {
+            // setup
+            const machine = new Machine();
+    
+            // exercise
+            machine.deposit(50)
+            const actual = machine.selectItem(0);
+            
+            // assert
+            expect(actual).toEqual('Your deposit is insufficient.  Please add Rs 50 for this item');
             });
 
    
